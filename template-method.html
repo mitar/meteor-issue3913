@@ -1,0 +1,28 @@
+<head>
+  <title>template-method</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  {{> dataTemplate dataContext}}
+</template>
+
+<template name="dataTemplate">
+  <p>{{dataContextHelper 'a' 'b' c='d'}}</p>
+  {{! Throws "First argument must be a function, to be called on the rest of the
+     arguments; found STRING" }}
+  {{! {{> dataContextTemplate 'a' 'b' c='d'}}
+  {{! Throws "No such template: dataContextTemplate" }}
+  {{! {{> dataContextTemplate c='d'}}
+  {{! Works }}
+  {{> dataContextTemplate}}
+</template>
+
+<template name="works">
+  <p>dataContextTemplate WORKS.</p>
+</template>
