@@ -16,9 +16,7 @@
   <p>{{dataContextHelper 'a' 'b' c='d'}}</p>
   {{! Throws "First argument must be a function, to be called on the rest of the
      arguments; found STRING" }}
-  {{! {{> dataContextTemplate 'a' 'b' c='d'}}
-  {{! Throws "No such template: dataContextTemplate" }}
-  {{! {{> dataContextTemplate c='d'}}
+  {{> dataContextTemplate args 'a' 'b' c='d'}}
   {{! Works }}
   {{> dataContextTemplate}}
 </template>
